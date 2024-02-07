@@ -24,6 +24,11 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        name: Checkout
+      - name: Definirvariable
+        run: echo "USERNAME=${{github.actor}}" >> $GITHUB_ENV
+      - name: correr script
+        run: python main.py
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
